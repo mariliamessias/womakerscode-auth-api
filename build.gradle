@@ -8,12 +8,18 @@ plugins {
 	id 'org.springframework.boot' version '2.3.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "com.microsoft.azure.azurewebapp" version "1.2.0"
 }
 ext {
 	set('springCloudVersion', "Hoxton.SR11")
 }
 
 apply plugin: "io.spring.dependency-management"
+
+azurewebapp {
+	resourceGroup = 'spring-cloud-meetup'
+	appName = 'azure-spring-cloud-meetup'
+}
 
 dependencyManagement {
 	imports {
@@ -46,7 +52,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-//	runtimeOnly 'com.h2database:h2'
+
 
 }
 

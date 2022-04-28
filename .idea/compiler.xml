@@ -10,7 +10,7 @@
         <module name="com.womakerscode.auth.server.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11">
       <module name="server" target="11" />
     </bytecodeTargetLevel>
   </component>
