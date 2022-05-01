@@ -17,8 +17,8 @@ ext {
 apply plugin: "io.spring.dependency-management"
 
 azurewebapp {
-	resourceGroup = 'spring-cloud-meetup'
-	appName = 'azure-spring-cloud-meetup'
+	resourceGroup = 'azure-spring-womakerscode'
+	appName = 'womakerscode-auth-api'
 }
 
 dependencyManagement {
