@@ -43,7 +43,4 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(userRequest.toSaveUser(Collections.singletonList(role)));
     }
 
-    private void validateRole(UserRequest userRequest, Role role) {
-
-    }
 }
