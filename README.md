@@ -13,8 +13,82 @@ Para ver documentação completa da arquitetura do projeto de conclusão constru
  <h4>Rotas da aplicação: </h4>
   
   POST - /oauth/token </br>
+  
+  <i>Request: </i>
+  ````
+  curl --location --request POST 'localhost:9192' \
+--header 'Authorization: {CLIENT AUTHORIZATION}' \
+--form 'username="{USERNAME}"' \
+--form 'password={PASSWORD}' \
+--form 'grant_type="password"'
+  ````
+  
+  <i>Response:</i>
+  
+  ````
+  {
+    "access_token": "eaa3283b-9491-47f2-b0ae-XXXX",
+    "token_type": "bearer",
+    "refresh_token": "2df08373-4ca7-4d59-a691-XXXX",
+    "expires_in": 3599,
+    "scope": "READ WRITE"
+}
+  ````
+  
   POST - /oauth/check_token </br>
+  
+  <i>Request:</i>
+  ````
+  curl --location --request POST 'localhost:9192/oauth/check_token?token=eaa3283b-9491-47f2-b0ae-XXX' \
+--header 'Authorization: Basic d2ViOnBpbg=='
+  ````
+  <i>Response:</i>
+   ````
+   {
+    "aud": [
+        "{RESOURCE_ID}"
+    ],
+    "user_name": "{USERNAME}",
+    "scope": [
+        "READ",
+        "WRITE"
+    ],
+    "active": true,
+    "exp": 1651767981,
+    "authorities": [
+        "READ",
+        "NORMAL",
+        "UPDATE"
+    ],
+    "client_id": "{CLIENT_ID}"
+}
+   ````
+  
   POST - /users </br>
+  
+  <i>Request</i>
+  ````
+  curl --location --request POST 'localhost:9192' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "user_name": "{USERNAME}",
+    "password": "{PASSWORD}",
+    "email": "{EMAIL}"
+}'
+  ````
+  
+  <i>Response:</i>
+  
+  ````
+  {
+    "id": 7,
+    "roles": [
+        "NORMAL"
+    ],
+    "user_name": "{USERNAME}",
+    "created_at": "2022-05-03T17:27:33.963884"
+}
+  ````
   
 
  <h4>Bibliotecas utilizadas no desenvolvimento dos três projetos:</h4>
