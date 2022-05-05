@@ -40,7 +40,7 @@ Para ver documentação completa da arquitetura do projeto de conclusão constru
   <i>Request:</i>
   ````
   curl --location --request POST 'localhost:9192/oauth/check_token?token=eaa3283b-9491-47f2-b0ae-XXX' \
---header 'Authorization: Basic d2ViOnBpbg=='
+--header 'Authorization: {CLIENT AUTHORIZATION}'
   ````
   <i>Response:</i>
    ````
